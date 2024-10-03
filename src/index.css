@@ -2,11 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-  background-color: #1A1A29;
+body {
+  background-color: #1a1a29;
 }
 @layer base {
   :root {
-    --radius: 0.5rem
+    --radius: 0.5rem;
+  }
+}
+
+@layer utilities {
+  .hide-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
   }
 }

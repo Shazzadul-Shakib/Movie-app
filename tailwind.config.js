@@ -13,6 +13,12 @@ export default {
         background: "#1A1A29",
         primary: "#13C9D4",
       },
+      screens: {
+        sm: "640px",
+        md: "768px",
+        lg: "1060px",
+        xl: "1280px",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

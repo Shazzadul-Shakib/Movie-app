@@ -9,6 +9,7 @@ const MovieDetails = () => {
   const navigate = useNavigate();
 
   const movie = location.state?.movie;
+  console.log(movie)
 
   return (
     <div>

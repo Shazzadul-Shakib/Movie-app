@@ -14,3 +14,14 @@ export type Movie = {
 export type NavbarProps = {
   setSearchTerm: (term: string) => void;
 };
+
+export type FilterBarProps = {
+  selectedFilter: string | null;
+  setSelectedFilter: (filter: string | null) => void;
+};
+
+export type SortingBarProps = {
+  sortOrder: "newest" | "oldest";
+  setSortOrder: (order: "newest" | "oldest") => void;
+};
+

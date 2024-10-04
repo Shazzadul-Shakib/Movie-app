@@ -2,14 +2,16 @@ import { ListFilter } from "lucide-react";
 import { Button } from "../ui/button";
 import {
   DropdownMenu,
-  DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuLabel,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
+import { SortingBarProps } from "@/utils/types";
 
-const SortingBar = () => {
+const SortingBar = ({ sortOrder, setSortOrder }: SortingBarProps) => {
   return (
     <div>
       <DropdownMenu>
@@ -24,8 +26,19 @@ const SortingBar = () => {
         <DropdownMenuContent align="end">
           <DropdownMenuLabel>Sort by release year</DropdownMenuLabel>
           <DropdownMenuSeparator />
-          <DropdownMenuCheckboxItem checked>Newest to oldest</DropdownMenuCheckboxItem>
-          <DropdownMenuCheckboxItem>Oldest to newest</DropdownMenuCheckboxItem>
+          <DropdownMenuRadioGroup
+            value={sortOrder}
+            onValueChange={(value) =>
+              setSortOrder(value as "newest" | "oldest")
+            }
+          >
+            <DropdownMenuRadioItem value="newest">
+              Newest to oldest
+            </DropdownMenuRadioItem>
+            <DropdownMenuRadioItem value="oldest">
+              Oldest to newest
+            </DropdownMenuRadioItem>
+          </DropdownMenuRadioGroup>
         </DropdownMenuContent>
       </DropdownMenu>
     </div>

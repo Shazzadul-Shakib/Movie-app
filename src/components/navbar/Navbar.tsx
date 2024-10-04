@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { NavbarProps } from "@/utils/types";
 
 const Navbar: React.FC<NavbarProps> = ({ setSearchTerm }) => {
+  // Search operation handled by onchange value
   const handleOnChangeSearch = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
   };

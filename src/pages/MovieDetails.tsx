@@ -8,8 +8,7 @@ const MovieDetails = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const movie = location.state?.movie;
-  console.log(movie)
+  const movie = location.state?.movie; // Getting movie data from router state 
 
   return (
     <div>
@@ -47,7 +46,11 @@ const MovieDetails = () => {
             {/* Badge section - genre */}
             <div className="mt-10 flex items-center gap-4">
               {movie.genreNames.map((genre: string) => (
-                <Badge key={genre} className="px-6 py-1 text-white" variant="outline">
+                <Badge
+                  key={genre}
+                  className="px-6 py-1 text-white"
+                  variant="outline"
+                >
                   {genre}
                 </Badge>
               ))}

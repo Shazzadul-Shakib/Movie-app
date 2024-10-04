@@ -46,7 +46,7 @@ const MovieDetails = () => {
             {/* Badge section - genre */}
             <div className="mt-10 flex items-center gap-4">
               {movie.genreNames.map((genre: string) => (
-                <Badge className="px-6 py-1 text-white" variant="outline">
+                <Badge key={genre} className="px-6 py-1 text-white" variant="outline">
                   {genre}
                 </Badge>
               ))}

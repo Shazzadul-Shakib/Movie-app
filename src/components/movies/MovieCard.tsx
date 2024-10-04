@@ -1,11 +1,12 @@
 import { CalendarFold, Clapperboard, Flame } from "lucide-react";
 import { Movie } from "@/utils/types";
+import { Link } from "react-router-dom";
 
 const MovieCard = ({ movie }: { movie: Movie }) => {
   const { title, genreNames, release_date } = movie;
-  
+
   return (
-    <div className="w-[200px] cursor-pointer">
+    <Link to={`/movies/${movie.id}`} state={{movie}} className="w-[200px] cursor-pointer">
       <div className="h-[250px] overflow-hidden">
         <div className="rounded-lg p-0">
           <img
@@ -31,7 +32,7 @@ const MovieCard = ({ movie }: { movie: Movie }) => {
           </p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
